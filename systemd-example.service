@@ -1,0 +1,14 @@
+[Unit]
+Description=Crypto Telegram Signal Bot
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/crypto-signal-bot
+ExecStart=/opt/crypto-signal-bot/.venv/bin/python /opt/crypto-signal-bot/bot.py
+Restart=always
+RestartSec=5
+EnvironmentFile=/opt/crypto-signal-bot/.env
+
+[Install]
+WantedBy=multi-user.target
